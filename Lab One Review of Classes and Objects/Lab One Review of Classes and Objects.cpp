@@ -143,3 +143,15 @@ int main()
 	return 0;
 
 }
+//function for validating the work ticket number
+int WorkTicket::Validating_Work_Ticket_Number(int ticket_number)
+{
+	if (cin.fail()) // If the User Enter None numeric Value
+	{
+		throw  std::invalid_argument("\nTicket number can not be non numeric!!!");
+	}
+	else if (ticket_number < 0 || ticket_number == 0)
+	{
+		throw std::invalid_argument("\nTicket number can not be non numeric or zero or negative!!!");
+	}
+}
