@@ -102,3 +102,44 @@ private:
 	int Validating_Month_for_date(int month);
 	int Validating_Year_for_date(int year);
 };
+
+int main()
+{
+	cout << "-----------------------------------------------------\n"
+		<< "\t Lab One Review of Classes and Objects \n\t\t\tWorkTicket\n"
+		<< "-------------------------------------------------------\n\n";
+	//making array's of 4 
+	WorkTicket tickets[4];
+
+	//using for loop to keep the programme running until 4 times (collect data in 4 boxes of an array)
+	for (int round = 0;round < 4;round++)
+	{
+		//exception handling
+		try
+		{
+			//calling the function to get the ticket information
+			tickets[round].SetWorkTicket();
+			cout << "\n---------------------------------";
+		}
+		catch (invalid_argument& ex)
+		{
+			cin.clear();
+			cin.sync();
+			cout << endl
+				<< ex.what();
+			//displaying exceptions accordingly
+			cerr << ex.what() << endl;
+		}
+	}
+
+	//second for loop showing the info ass many times as we cteate array size
+
+	cout << "\n---------------------\n\tOutPut\n";
+	for (int output = 0;output < 4;output++)
+	{
+		tickets[output].ShowWorkTicket();
+	}
+
+	return 0;
+
+}
