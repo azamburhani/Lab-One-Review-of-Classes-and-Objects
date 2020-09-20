@@ -167,4 +167,25 @@ int WorkTicket::Validating_Day_for_date(int day)
 		throw std::invalid_argument("\nThe entered input for date is out of range!!!");
 	}
 }
-
+int WorkTicket::Validating_Month_for_date(int month)
+{
+	if (cin.fail())
+	{
+		throw  std::invalid_argument("\nDay Value must be numeric !!!");
+	}
+	else if (month < 1 || month > 12)
+	{
+		throw std::invalid_argument("\nThe entered input for month is out of range!!!");
+	}
+}
+int WorkTicket::Validating_Month_for_date(int month)
+{
+	if (cin.fail())
+	{
+		throw  std::invalid_argument("\nDay Value must be numeric !!!");
+	}
+	else if (month < 1 || month > 12)
+	{
+		throw std::invalid_argument("\nThe entered input for month is out of range!!!");
+	}
+}
