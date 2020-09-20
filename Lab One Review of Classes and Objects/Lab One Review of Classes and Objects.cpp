@@ -19,4 +19,86 @@ using namespace std;
 
 class WorkTicket							// main class name
 {
-}
+public:
+
+	//default constructor
+	WorkTicket()
+	{
+		WorkTicketNumber = 0;
+		Day = 1;
+		Month = 1;
+		Year = 2000;
+		ClientID = "";
+		IssueInformation = "";
+	}
+
+	//parameterized constructor
+	WorkTicket(int ticket, string clientID, int day, int month, int year, string desc)
+	{
+		WorkTicketNumber = ticket;
+		ClientID = clientID;
+		Day = day;
+		Month = month;
+		Year = year;
+		IssueInformation = desc;
+	}
+	// function for getting input from user and validating all the integer inout for work ticket Info.
+	void SetWorkTicket()
+	{
+
+		cout << endl << "Please enter the ticket number:";
+		cin >> WorkTicketNumber;
+		Validating_Work_Ticket_Number(WorkTicketNumber);
+
+		cout << endl << "Please enter the client ID: ";
+		getchar(); 		// for clearing the buffer 
+		getline(cin, ClientID);
+
+		cout << endl << "Enter the day for date: ";
+		cin >> Day;
+		int Validating_Day_for_date(Day);
+
+		cout << endl << "Enter the month for the date: ";
+		cin >> Month;
+		Validating_Month_for_date(Month);
+
+		cout << endl << "Enter the year for date: ";
+		cin >> Year;
+		Validating_Year_for_date(Year);
+
+		cout << endl << "Enter your issue description:";
+		getchar();
+		getline(cin, IssueInformation);
+
+	}
+
+	//function for getting the output print on display
+	void ShowWorkTicket()
+	{
+		cout << "\nYour ticket number is : "
+			<< WorkTicketNumber << " \Your client ID is : "
+			<< ClientID << " \t the is date was : "
+			<< Day << "-" << Month << "-" << Year << " \t & the issue was : "
+			<< IssueInformation;
+	}
+
+private:
+	// variable to store ticket number		
+	int WorkTicketNumber;
+	//variable to store Day for date
+	int Day;
+	//variable to store Month for date
+	int Month;
+	//variable to store year for date
+	int Year;
+	// variable to store client ID		
+	string ClientID;
+	//  variable to store Issue 
+	string IssueInformation;
+
+	//Function to do validation of all integer input
+	int Validating_Work_Ticket_Number(int ticket_no);
+	int Validating_Day_for_date(int day);
+	int Validating_Month_for_date(int month);
+	int Validating_Year_for_date(int year);
+};
