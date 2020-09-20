@@ -143,7 +143,7 @@ int main()
 	return 0;
 
 }
-//function for validating the work ticket number
+//Function for validating the work ticket number
 int WorkTicket::Validating_Work_Ticket_Number(int ticket_number)
 {
 	if (cin.fail()) // If the User Enter None numeric Value
@@ -155,3 +155,16 @@ int WorkTicket::Validating_Work_Ticket_Number(int ticket_number)
 		throw std::invalid_argument("\nTicket number can not be non numeric or zero or negative!!!");
 	}
 }
+//Function Validating day for date
+int WorkTicket::Validating_Day_for_date(int day)
+{
+	if (cin.fail())
+	{
+		throw  std::invalid_argument("\nDay Number must a numeric Value!!!");
+	}
+	else if (day < 1 || day > 31)
+	{
+		throw std::invalid_argument("\nThe entered input for date is out of range!!!");
+	}
+}
+
