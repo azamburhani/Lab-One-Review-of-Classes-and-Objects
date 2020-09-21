@@ -1,6 +1,6 @@
 /*
 
-	Name : Ahmad Azam (100698308), Ryan Maku ()
+	Name : Ahmad Azam (100698308), Ryan Makund (100742692)
 
 	Date : September 19, 2020
 
@@ -16,8 +16,8 @@
 #include<string>
 
 using namespace std;
-
-class WorkTicket							// main class name
+// main class name
+class WorkTicket							
 {
 public:
 
@@ -167,6 +167,7 @@ int WorkTicket::Validating_Day_for_date(int day)
 		throw std::invalid_argument("\nThe entered input for date is out of range!!!");
 	}
 }
+//Function Validating month for date
 int WorkTicket::Validating_Month_for_date(int month)
 {
 	if (cin.fail())
@@ -178,7 +179,7 @@ int WorkTicket::Validating_Month_for_date(int month)
 		throw std::invalid_argument("\nThe entered input for month is out of range!!!");
 	}
 }
-
+//Function Validating year for date
 int WorkTicket::Validating_Year_for_date(int year)
 {
 	if (cin.fail())
